@@ -1,0 +1,54 @@
+/* ==============================================
+   VASTU CHITRA INTERACTIVE — THEME TOKENS
+   ============================================== */
+
+:root {
+  color-scheme: dark light;
+}
+
+[data-theme="dark"] {
+  --bg: #0D0D0D;
+  --bg-surface: #141414;
+  --bg-card: #1C1C1C;
+  --bg-card-hover: #222222;
+  --accent: #E85D27;
+  --accent-dim: rgba(232, 93, 39, 0.15);
+  --accent-2: #C98A1A;
+  --accent-2-dim: rgba(201, 138, 26, 0.15);
+  --accent-3: #1D9E75;
+  --accent-3-dim: rgba(29, 158, 117, 0.12);
+  --text: #F0EAE0;
+  --text-muted: #7A7469;
+  --text-faint: #2E2C28;
+  --border: rgba(240, 234, 224, 0.07);
+  --border-strong: rgba(240, 234, 224, 0.16);
+  --shadow-glow: rgba(232, 93, 39, 0.08);
+}
+
+[data-theme="light"] {
+  --bg: #F5F0E8;
+  --bg-surface: #EDE8DC;
+  --bg-card: #E4DDD0;
+  --bg-card-hover: #D8D0C2;
+  --accent: #C94A18;
+  --accent-dim: rgba(201, 74, 24, 0.10);
+  --accent-2: #9E6A0A;
+  --accent-2-dim: rgba(158, 106, 10, 0.10);
+  --accent-3: #0F6E56;
+  --accent-3-dim: rgba(15, 110, 86, 0.10);
+  --text: #1A1714;
+  --text-muted: #6B6258;
+  --text-faint: #C8C0B4;
+  --border: rgba(26, 23, 20, 0.08);
+  --border-strong: rgba(26, 23, 20, 0.18);
+  --shadow-glow: rgba(201, 74, 24, 0.06);
+}
+
+/* Theme transition — smooth color switch */
+[data-theme="dark"],
+[data-theme="light"] {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}

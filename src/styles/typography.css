@@ -1,0 +1,95 @@
+/* ==============================================
+   VASTU CHITRA INTERACTIVE — TYPOGRAPHY SCALE
+   ============================================== */
+
+:root {
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Hero — massive headlines */
+  --t-hero: clamp(52px, 8vw, 116px);
+  --t-hero-weight: 700;
+  --t-hero-tracking: -0.03em;
+  --t-hero-leading: 0.95;
+
+  /* Display — section titles */
+  --t-display: clamp(32px, 4.5vw, 64px);
+  --t-display-weight: 600;
+  --t-display-tracking: -0.025em;
+
+  /* H2 — subsection */
+  --t-h2: clamp(22px, 2.8vw, 38px);
+  --t-h2-weight: 500;
+
+  /* H3 — card titles */
+  --t-h3: clamp(17px, 1.8vw, 22px);
+  --t-h3-weight: 500;
+
+  /* Body */
+  --t-body: 16px;
+  --t-body-leading: 1.85;
+
+  /* Small */
+  --t-small: 14px;
+  --t-small-leading: 1.7;
+
+  /* Label — uppercase micro */
+  --t-label: 11px;
+  --t-label-weight: 600;
+  --t-label-tracking: 0.11em;
+}
+
+/* Utility classes for typography */
+.t-hero {
+  font-family: var(--font-display);
+  font-size: var(--t-hero);
+  font-weight: var(--t-hero-weight);
+  letter-spacing: var(--t-hero-tracking);
+  line-height: var(--t-hero-leading);
+  color: var(--text);
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-size: var(--t-display);
+  font-weight: var(--t-display-weight);
+  letter-spacing: var(--t-display-tracking);
+  color: var(--text);
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-h2);
+  font-weight: var(--t-h2-weight);
+  color: var(--text);
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-h3);
+  font-weight: var(--t-h3-weight);
+  color: var(--text);
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: var(--t-body-leading);
+  color: var(--text-muted);
+}
+
+.t-small {
+  font-family: var(--font-body);
+  font-size: var(--t-small);
+  line-height: var(--t-small-leading);
+  color: var(--text-muted);
+}
+
+.t-label {
+  font-family: var(--font-body);
+  font-size: var(--t-label);
+  font-weight: var(--t-label-weight);
+  letter-spacing: var(--t-label-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
