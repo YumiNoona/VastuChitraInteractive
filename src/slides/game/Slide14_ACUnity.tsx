@@ -103,7 +103,7 @@ export default function Slide14_ACUnity() {
           ))}
         </div>
       </div>
-      <CircleMaskImage src="/images/slides/slide14.jpg" alt="Notre-Dame" />
+      <CircleMaskImage src="/images-videos/Slide-14.png" alt="Notre-Dame in AC Unity" />
     </div>
   )
 }

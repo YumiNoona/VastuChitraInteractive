@@ -18,7 +18,25 @@ export default function Slide07_BehindScenes() {
         overflow: 'hidden',
       }}
     >
-      <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-display)', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.025em', textAlign: 'center', marginBottom: 24 }}>
+      <video
+        src="/images-videos/Slide-7.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.35,
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+      />
+      <h2 style={{ position: 'relative', zIndex: 1, fontFamily: 'var(--font-display)', fontSize: 'var(--t-display)', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.025em', textAlign: 'center', marginBottom: 24 }}>
         Behind the Scenes
       </h2>
       <div style={{ display: 'flex', gap: 20, flex: 1 }}>

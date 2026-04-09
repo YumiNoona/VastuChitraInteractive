@@ -1,6 +1,6 @@
 'use client'
 
-import CircleMaskImage from '@/components/CircleMaskImage'
+import CircleMaskVideo from '@/components/CircleMaskVideo'
 import { useStaggerReveal } from '@/hooks/useScrollReveal'
 
 const steps = [
@@ -26,7 +26,7 @@ export default function Slide05_Pipeline() {
         overflow: 'hidden',
       }}
     >
-      <CircleMaskImage src="/images/slides/slide05.jpg" alt="Dark warrior" side="left" />
+      <CircleMaskVideo src="/images-videos/Slide-5.mp4" side="left" />
       <div style={{ width: '55%', marginLeft: '45%', padding: '3% 4%', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 1 }}>
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-display)', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.025em' }}>
           Game Dev Pipeline

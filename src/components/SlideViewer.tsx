@@ -1,18 +1,25 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback, Suspense } from 'react'
+import { gameComponents } from '@/slides/game'
+import { projectionComponents } from '@/slides/projection'
 
-export interface SlideEntry {
+export interface SlideMetadata {
   id: number
   title: string
-  component: React.LazyExoticComponent<React.ComponentType>
 }
 
 interface SlideViewerProps {
-  slides: SlideEntry[]
+  type: 'game' | 'projection'
+  slides: SlideMetadata[]
 }
 
-export default function SlideViewer({ slides }: SlideViewerProps) {
+const registry = {
+  game: gameComponents,
+  projection: projectionComponents,
+}
+
+export default function SlideViewer({ type, slides }: SlideViewerProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<'next' | 'prev'>('next')
   const [isPlaying, setIsPlaying] = useState(true)
@@ -99,14 +106,14 @@ export default function SlideViewer({ slides }: SlideViewerProps) {
     }
   }
 
-  const ActiveSlide = slides[activeIndex].component
+  const ActiveSlide = registry[type]?.[activeIndex] || null
 
   const transitionDuration = reducedMotion ? '0ms' : '380ms'
 
   return (
     <div
       role="region"
-      aria-label="Game idea presentation"
+      aria-label={`${type} presentation`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -157,7 +164,7 @@ export default function SlideViewer({ slides }: SlideViewerProps) {
                 : `slideIn${direction === 'next' ? 'Left' : 'Right'} ${transitionDuration} cubic-bezier(0.4,0,0.2,1)`,
             }}
           >
-            <ActiveSlide />
+            {ActiveSlide && <ActiveSlide />}
           </div>
         </Suspense>
 

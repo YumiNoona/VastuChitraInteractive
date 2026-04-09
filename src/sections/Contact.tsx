@@ -7,6 +7,19 @@ export default function Contact() {
 
   return (
     <section id="contact" style={{ position: 'relative', background: 'var(--bg)', padding: '120px 6vw', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <video
+          src="/images-videos/Outro.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.15 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg) 0%, transparent 50%, var(--bg) 100%)' }} />
+      </div>
+
       <div 
         style={{ 
           position: 'absolute', 

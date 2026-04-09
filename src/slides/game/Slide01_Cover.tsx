@@ -32,22 +32,26 @@ export default function Slide01_Cover() {
         justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
-        backgroundImage:
-          'radial-gradient(circle, var(--text-faint) 1px, transparent 1px)',
-        backgroundSize: '24px 24px',
       }}
     >
-      <div
+      <video
+        src="/images-videos/Slide-1.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage:
-            'radial-gradient(circle, var(--text-faint) 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
-          animation: 'dotPulse 6s ease-in-out infinite',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.6,
           pointerEvents: 'none',
         }}
       />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg) 0%, transparent 100%)', pointerEvents: 'none' }} />
       <div ref={titleRef} style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '0 24px' }}>
         {'Vastu Chitra Interactive'.split(' ').map((word, i) => (
           <span
@@ -82,7 +86,7 @@ export default function Slide01_Cover() {
           animation: 'fadeIn 700ms ease 600ms both',
         }}
       >
-        Game Design · Projection Mapping · Interactive Worlds
+        Game Design Documentary
       </p>
       <p
         style={{
@@ -98,7 +102,7 @@ export default function Slide01_Cover() {
           animation: 'fadeIn 700ms ease 900ms both',
         }}
       >
-        Vastu Chitra Interactive · 2025
+        Vastu Chitra Interactive · 2026
       </p>
       <style jsx>{`
         @keyframes dotPulse {

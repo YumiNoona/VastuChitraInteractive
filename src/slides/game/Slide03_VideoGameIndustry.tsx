@@ -1,6 +1,6 @@
 'use client'
 
-import CircleMaskImage from '@/components/CircleMaskImage'
+import CircleMaskVideo from '@/components/CircleMaskVideo'
 import { useStaggerReveal } from '@/hooks/useScrollReveal'
 
 const iconRows = [
@@ -86,7 +86,7 @@ export default function Slide03_VideoGameIndustry() {
           ))}
         </div>
       </div>
-      <CircleMaskImage src="/images/slides/slide03.jpg" alt="The Last of Us scene" />
+      <CircleMaskVideo src="/images-videos/Slide-3.mp4" />
     </div>
   )
 }

@@ -58,7 +58,7 @@ export default function Slide12_SuccessfulStories() {
           </div>
         </div>
       </div>
-      <CircleMaskImage src="/images/slides/slide12.jpg" alt="Game production" />
+      <CircleMaskImage src="/images-videos/Slide-12.png" alt="Game production scale" />
     </div>
   )
 }

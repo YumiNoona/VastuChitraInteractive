@@ -48,7 +48,7 @@ export default function Slide17_Uncharted() {
           ))}
         </div>
       </div>
-      <CircleMaskImage src="/images/slides/slide17.jpg" alt="Uncharted Hoysala ruins" />
+      <CircleMaskImage src="/images-videos/Slide-17.jpg" alt="Uncharted: The Lost Legacy Hoysala Architecture" />
     </div>
   )
 }

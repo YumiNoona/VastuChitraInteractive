@@ -1,6 +1,6 @@
 'use client'
 
-import CircleMaskImage from '@/components/CircleMaskImage'
+import CircleMaskVideo from '@/components/CircleMaskVideo'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 export default function Slide02_WhatDefinesAGame() {
@@ -49,7 +49,7 @@ export default function Slide02_WhatDefinesAGame() {
           worlds, the core remains: agency, challenge, and reward within a designed experience.
         </p>
       </div>
-      <CircleMaskImage src="/images/slides/slide02.jpg" alt="Cyberpunk city" />
+      <CircleMaskVideo src="/images-videos/Slide-2.mp4" />
     </div>
   )
 }

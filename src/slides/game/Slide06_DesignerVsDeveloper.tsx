@@ -30,7 +30,25 @@ export default function Slide06_DesignerVsDeveloper() {
         padding: '4%',
       }}
     >
-      <div style={{ display: 'flex', flex: 1, position: 'relative' }}>
+      <video
+        src="/images-videos/Slide-6.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.25,
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+      />
+      <div style={{ display: 'flex', flex: 1, position: 'relative', zIndex: 1 }}>
         {/* Designer Column */}
         <div
           style={{

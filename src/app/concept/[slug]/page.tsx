@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import SlideViewer, { SlideEntry } from '@/components/SlideViewer'
+import SlideViewer from '@/components/SlideViewer'
 import ThemeToggle from '@/components/ThemeToggle'
-import { gameSlides } from '@/slides/game/index'
-import { projectionSlides } from '@/slides/projection/index'
+import { gameMetadata } from '@/slides/game'
+import { projectionMetadata } from '@/slides/projection'
 
 export const dynamicParams = false
 
@@ -17,21 +17,26 @@ export function generateStaticParams() {
 export default async function ConceptViewerPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
-  let slides: SlideEntry[] | null = null
-  let title = ''
-  
   if (slug === 'game') {
-    slides = gameSlides
-    title = 'The Game Concept'
-  } else if (slug === 'projection-mapping') {
-    slides = projectionSlides
-    title = 'Projection Mapping'
+    return (
+      <ViewerLayout title="The Game Concept">
+        <SlideViewer type="game" slides={gameMetadata} />
+      </ViewerLayout>
+    )
   }
 
-  if (!slides) {
-    notFound()
+  if (slug === 'projection-mapping') {
+    return (
+      <ViewerLayout title="Projection Mapping">
+        <SlideViewer type="projection" slides={projectionMetadata} />
+      </ViewerLayout>
+    )
   }
 
+  notFound()
+}
+
+function ViewerLayout({ title, children }: { title: string, children: React.ReactNode }) {
   return (
     <main style={{ minHeight: '100dvh', background: 'var(--bg)', display: 'flex', flexDirection: 'column' }}>
       {/* Top Bar */}
@@ -63,7 +68,7 @@ export default async function ConceptViewerPage({ params }: { params: Promise<{ 
 
       {/* Viewer Container */}
       <div style={{ flex: 1, padding: '16px 2vw', display: 'flex', flexDirection: 'column', width: '100%', margin: '0 auto', maxWidth: 1920 }}>
-        <SlideViewer slides={slides} />
+        {children}
       </div>
     </main>
   )

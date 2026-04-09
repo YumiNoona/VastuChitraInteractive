@@ -29,43 +29,18 @@ export default function Slide09_SeeItInAction() {
         How the same world can look across different rendering dimensions.
       </p>
 
-      <div style={{ display: 'flex', gap: 0, flex: 1 }}>
-        {panels.map((panel, i) => (
-          <div
-            key={i}
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              position: 'relative',
-              opacity: i < visibleCount ? 1 : 0,
-              transform: i < visibleCount ? 'translateY(0)' : 'translateY(30px)',
-              transition: 'opacity 500ms ease, transform 500ms ease',
-            }}
-          >
-            {i > 0 && (
-              <div style={{
-                position: 'absolute', left: 0, top: 0, width: 1, background: 'var(--accent)',
-                height: i < visibleCount ? '100%' : '0%', transition: 'height 600ms ease', zIndex: 2,
-              }} />
-            )}
-            <div style={{ position: 'relative', margin: '0 8px' }}>
-              <div style={{ aspectRatio: '16/9', borderRadius: 8, background: panel.gradient, position: 'relative' }}>
-                <span style={{
-                  position: 'absolute', top: 10, left: 10,
-                  background: 'rgba(0,0,0,0.6)', color: '#fff',
-                  fontFamily: 'var(--font-body)', fontSize: 'var(--t-label)', fontWeight: 600,
-                  letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 20,
-                }}>
-                  {panel.label}
-                </span>
-              </div>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-small)', color: 'var(--text-muted)', marginTop: 10, textAlign: 'center', lineHeight: 1.6 }}>
-                {panel.desc}
-              </p>
-            </div>
+      <div style={{ position: 'relative', width: '100%', aspectRatio: '21/9', borderRadius: 12, overflow: 'hidden', opacity: visibleCount > 0 ? 1 : 0, transform: visibleCount > 0 ? 'scale(1)' : 'scale(1.02)', transition: 'all 800ms ease' }}>
+        <img src="/images-videos/Slide-9.png" alt="Featured gameplay" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%)' }} />
+        <div style={{ position: 'absolute', bottom: 20, left: 20, right: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+          <div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-h3)', fontWeight: 600, color: '#fff' }}>Final Composited Scene</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-small)', color: 'rgba(255,255,255,0.7)', marginTop: 4 }}>Rendering artifacts, lighting, and post-processing combined.</div>
           </div>
-        ))}
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-label)', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', background: 'rgba(0,0,0,0.4)', padding: '6px 12px', borderRadius: 4, border: '1px solid var(--accent)' }}>
+            Difference In Art Style
+          </div>
+        </div>
       </div>
     </div>
   )
