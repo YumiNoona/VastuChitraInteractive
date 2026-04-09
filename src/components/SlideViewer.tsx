@@ -1,9 +1,18 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback, Suspense } from 'react'
-import { slides } from '@/slides/index'
 
-export default function SlideViewer() {
+export interface SlideEntry {
+  id: number
+  title: string
+  component: React.LazyExoticComponent<React.ComponentType>
+}
+
+interface SlideViewerProps {
+  slides: SlideEntry[]
+}
+
+export default function SlideViewer({ slides }: SlideViewerProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<'next' | 'prev'>('next')
   const [isPlaying, setIsPlaying] = useState(true)
@@ -66,9 +75,15 @@ export default function SlideViewer() {
   // Scroll thumbnail into view
   useEffect(() => {
     if (!thumbStripRef.current) return
-    const thumb = thumbStripRef.current.children[activeIndex] as HTMLElement
+    const container = thumbStripRef.current
+    const thumb = container.children[activeIndex] as HTMLElement
     if (thumb) {
-      thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+      const thumbCenter = thumb.offsetLeft + thumb.offsetWidth / 2
+      const containerCenter = container.offsetWidth / 2
+      container.scrollTo({
+        left: thumbCenter - containerCenter,
+        behavior: 'smooth',
+      })
     }
   }, [activeIndex])
 

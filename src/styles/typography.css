@@ -13,7 +13,7 @@
   --t-hero-leading: 0.95;
 
   /* Display — section titles */
-  --t-display: clamp(32px, 4.5vw, 64px);
+  --t-display: clamp(28px, 3.8vw, 50px);
   --t-display-weight: 600;
   --t-display-tracking: -0.025em;
 

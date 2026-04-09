@@ -5,7 +5,6 @@ import React, { useEffect, Suspense } from 'react'
 const Hero = React.lazy(() => import('@/sections/Hero'))
 const About = React.lazy(() => import('@/sections/About'))
 const Work = React.lazy(() => import('@/sections/Work'))
-const TheGame = React.lazy(() => import('@/sections/TheGame'))
 const Studio = React.lazy(() => import('@/sections/Studio'))
 const Contact = React.lazy(() => import('@/sections/Contact'))
 
@@ -26,9 +25,6 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={null}>
         <Work />
-      </Suspense>
-      <Suspense fallback={null}>
-        <TheGame />
       </Suspense>
       <Suspense fallback={null}>
         <Studio />

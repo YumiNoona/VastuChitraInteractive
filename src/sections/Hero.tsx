@@ -39,7 +39,7 @@ export default function Hero() {
         </h1>
         
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-h3)', fontWeight: 500, color: 'var(--text-muted)', marginTop: 24, opacity: 0, animation: 'fadeIn 600ms ease 900ms forwards' }}>
-          Projection Mapping · VR · Interactive Worlds
+          Unreal Engine · 3D Rendering · Architectural Visualization
         </h2>
         
         <div style={{ marginTop: 40, opacity: 0, animation: 'fadeIn 600ms ease 1100ms forwards' }}>

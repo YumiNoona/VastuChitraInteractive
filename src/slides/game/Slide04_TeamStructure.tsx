@@ -24,8 +24,8 @@ export default function Slide04_TeamStructure() {
         overflow: 'hidden',
       }}
     >
-      <div style={{ width: '40%', padding: '5% 4%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-display)', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.025em' }}>
+      <div style={{ width: '45%', padding: '4% 5%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-display)', fontWeight: 600, color: 'var(--text)', whiteSpace: 'nowrap', letterSpacing: '-0.025em' }}>
           Team Structure
         </h2>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-small)', color: 'var(--text-muted)', marginTop: 12, lineHeight: 1.7 }}>
@@ -35,7 +35,7 @@ export default function Slide04_TeamStructure() {
       </div>
       <div
         style={{
-          width: '60%',
+          width: '55%',
           padding: '3% 4% 3% 2%',
           display: 'flex',
           flexDirection: 'column',

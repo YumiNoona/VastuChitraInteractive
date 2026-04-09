@@ -28,7 +28,7 @@ export default function About() {
           }}
         >
           <div style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--t-display)', fontWeight: 600, color: 'var(--accent)', letterSpacing: '-0.025em' }}>
-            <WordCycler words={["Projection", "Mapping", "Immersion", "Story", "Space", "Architecture"]} interval={2000} />
+            <WordCycler words={["Unreal Engine", "ArchViz", "Real-Time 3D", "Interactive", "Architecture", "Rendering"]} interval={2000} />
           </div>
           <div style={{ width: 48, height: 2, background: 'var(--accent)', marginTop: 24 }} />
         </div>
@@ -42,8 +42,7 @@ export default function About() {
           }}
         >
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--t-body)', color: 'var(--text-muted)', lineHeight: 1.9, maxWidth: 600 }}>
-            We are a spatial storytelling studio at the intersection of architecture, light, and interactive technology. 
-            Our work transforms built environments into living, breathing narratives.
+            We are a high-end visualization and interactive studio. Specializing in Unreal Engine, 3D modeling, and real-time rendering, we build immersive digital environments and architectural visualizations for global clients.
           </p>
         </div>
       </div>

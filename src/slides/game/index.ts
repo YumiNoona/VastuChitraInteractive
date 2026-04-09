@@ -1,12 +1,7 @@
 import React from 'react'
+import type { SlideEntry } from '@/components/SlideViewer'
 
-export interface SlideEntry {
-  id: number
-  title: string
-  component: React.LazyExoticComponent<React.ComponentType>
-}
-
-export const slides: SlideEntry[] = [
+export const gameSlides: SlideEntry[] = [
   { id: 1, title: 'Vastu Chitra Interactive', component: React.lazy(() => import('./Slide01_Cover')) },
   { id: 2, title: 'What Defines a Game?', component: React.lazy(() => import('./Slide02_WhatDefinesAGame')) },
   { id: 3, title: 'Video Game Industry', component: React.lazy(() => import('./Slide03_VideoGameIndustry')) },

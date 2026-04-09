@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
-  { label: 'The Game', href: '#the-game' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about', isRoute: false },
+  { label: 'Work', href: '/#work', isRoute: false },
+  { label: 'Concept', href: '/concept', isRoute: true },
+  { label: 'Contact', href: '/#contact', isRoute: false },
 ]
 
 export default function Navbar() {
@@ -86,22 +87,41 @@ export default function Navbar() {
           className="nav-desktop"
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: 14,
-                fontWeight: 500,
-                color: 'var(--text-muted)',
-                transition: 'color 200ms',
-                letterSpacing: '0.02em',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
-            >
-              {link.label}
-            </a>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  color: 'var(--text-muted)',
+                  transition: 'color 200ms',
+                  letterSpacing: '0.02em',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  color: 'var(--text-muted)',
+                  transition: 'color 200ms',
+                  letterSpacing: '0.02em',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <ThemeToggle />
         </div>
@@ -167,20 +187,37 @@ export default function Navbar() {
           }}
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(28px, 5vw, 40px)',
-                fontWeight: 600,
-                color: 'var(--text)',
-                transition: 'color 200ms',
-              }}
-            >
-              {link.label}
-            </a>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(28px, 5vw, 40px)',
+                  fontWeight: 600,
+                  color: 'var(--text)',
+                  transition: 'color 200ms',
+                }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(28px, 5vw, 40px)',
+                  fontWeight: 600,
+                  color: 'var(--text)',
+                  transition: 'color 200ms',
+                }}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <ThemeToggle />
         </div>
